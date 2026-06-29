@@ -682,7 +682,8 @@ fn test_multi_invoice_fund_two_repay_one_default_one() {
     let stats_final = te.pool.get_stats();
     assert_eq!(stats_final.active_invoice_count, 0);
     assert_eq!(stats_final.total_funded, 0);
-    // total_deposits = 100B (initial) + 200M (yield from repaid) - 9.8B (defaulted) = 90_400_000_000
+    // total_deposits = 100B (initial) + 200M (yield from repaid)
+    // - 9.8B (defaulted) = 90_400_000_000
     assert_eq!(stats_final.total_deposits, 90_400_000_000);
 
     // LP value reflects both outcomes
